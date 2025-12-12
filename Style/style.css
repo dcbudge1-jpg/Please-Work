@@ -1,0 +1,228 @@
+/* ========== GLOBAL DARK THEME ========== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #1f3b57 0, #050814 55%, #02030a 100%);
+    color: #e8f0ff;
+}
+
+/* Overall page layout: left sidebar + main content */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ========== LEFT SIDEBAR ========== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background: rgba(3, 11, 30, 0.97);
+    border-right: 1px solid #24344f;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border: 2px solid #304a70;
+}
+
+/* Title in sidebar (if you move <h1> there) */
+.sidebar h1 {
+    font-size: 1.4rem;
+    margin: 0 0 16px 0;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f5f7ff;
+}
+
+/* Nav links in sidebar */
+.sidebar a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+    margin: 4px 0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #b7d8ff;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sidebar a:hover {
+    background: #173152;
+    border-color: #47c2ff;
+    color: #ffffff;
+}
+
+/* ========== MAIN CONTENT ========== */
+
+.main-content {
+    /* leave room for the fixed sidebar */
+    margin-left: 230px;
+    padding: 28px 24px 60px 24px;
+    max-width: 960px;
+    box-sizing: border-box;
+}
+
+/* Generic card-like sections */
+.section {
+    margin-top: 28px;
+    padding: 22px 20px;
+    background: rgba(10, 22, 45, 0.92);
+    border-radius: 10px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Hero / main ski image */
+.hero {
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #304a70;
+}
+
+/* Headings */
+h2, h3 {
+    color: #f5f7ff;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #33496b;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Lists for runs */
+ol {
+    padding-left: 22px;
+    margin-top: 10px;
+}
+
+ul {
+    margin-top: 6px;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+/* Make top-level runs stand out slightly */
+.runs-section ol > li {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Video styling */
+.video-section {
+    text-align: center;
+}
+
+.video-wrapper {
+    margin-top: 12px;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.video-wrapper iframe {
+    display: block;
+    border: none;
+}
+
+/* Tableau chart section */
+.chart-section {
+    text-align: center;
+}
+
+.chart-section h2 {
+    text-align: left;
+}
+
+.tableauPlaceholder {
+    margin: 16px auto 0 auto;
+    max-width: 700px;
+    background: #020712;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Generic link styling in content */
+a {
+    color: #7fd4ff;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ========== RESPONSIVE TWEAKS ========== */
+
+@media (max-width: 800px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .sidebar img {
+        max-width: 110px;
+        margin-bottom: 0;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        width: auto;
+        margin: 0 4px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px 14px 40px 14px;
+    }
+
+    .section {
+        padding: 18px 14px;
+    }
+
+    .tableauPlaceholder {
+        max-width: 100%;
+    }
+}
